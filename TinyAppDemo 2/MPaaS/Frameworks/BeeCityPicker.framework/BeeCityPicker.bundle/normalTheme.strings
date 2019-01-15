@@ -1,0 +1,30 @@
+{
+    "colors":
+    {
+        "TABLEVIEW_BACKGROUND_COLOR":"#78B881",
+        "TABLEVIEW_CELL_BACKGROUND_COLOR" : "#622B53",
+        "CELL_TITLE_COLOR" : "#ffffff",
+        "CELL_HEADER_TITLE_COLOR" : "#ffffff,0",
+        "SEGMENT_BACKGROUND_COLOR" : "#49717C",
+        "SEGMENT_TEXT_COLOR" : "#C6C6E5",
+        "TITLEBAR_BACKGROUND_COLOR" : "#DB5AB7",
+        "TITLEBAR_TITLE_TEXTCOLOR]" : "#ffffff",
+        "TITLEBAR_TEXTCOLOR" : "#000000",
+        "TITLEBAR_ICON_COLOR" : "#000000",
+        "TITLEBAR_LINE_COLOR" : "#F5A623"
+    },
+    "textSize":
+    {
+        "TITLEBAR_TEXTSIZE" : "16",
+        "TITLEBAR_TITLE_TEXTSIZE" : "b,18"
+    },
+    "imageSize":
+    {
+        "TITLEBAR_ICON_SIZE" :
+        {
+            "width":22,
+            "height":22
+        }
+    },
+    "TITLEBAR_BACK_IMAGE" : "APCommonUI.bundle/back_button_normal"
+}

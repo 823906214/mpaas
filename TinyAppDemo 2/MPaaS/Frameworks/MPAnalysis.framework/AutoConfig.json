@@ -1,0 +1,24 @@
+{
+    "class": "MPAnalysisInterface",
+    "header": "<MPAnalysis/MPAnalysisInterface.h>",
+    "title": {
+        "chinese": "MAS移动分析",
+        "english": "MAS analysis"
+    },
+    "entries": [
+                    {
+                        "title": {
+                            "chinese": "网关地址",
+                            "english": "Gateway"
+                        },
+                        "declaration": "- (BOOL)shouldLogReportActive",
+                        "description": {
+                            "chinese": "重写此方法，确认后台回前台时是否报活。默认每次回前台都会报活",
+                            "english": "Override this method to decide wether reportactive when enter forground."
+                        },
+                        "optional": true,
+                        "type": "string",
+                        "default": "YES"
+                    }
+                ]
+}

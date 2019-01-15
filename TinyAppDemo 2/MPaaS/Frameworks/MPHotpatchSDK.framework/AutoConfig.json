@@ -1,0 +1,24 @@
+{
+    "class": "DynamicReleaseInterface",
+    "header": "<MPHotpatchSDK/MPHotpatchSDK.h>",
+    "title": {
+        "chinese": "Hotpatch",
+        "english": "Hotpatch"
+    },
+    "entries": [
+                    {
+                        "title": {
+                            "chinese": "Hotpatch加密Key",
+                            "english": "Hotpatch AESEncryptionKey"
+                        },
+                        "declaration": "- (NSString*)AESEncryptionKeyName",
+                        "description": {
+                            "chinese": "重写该方法返回Hotpatch安全流程涉及到AES加密，保存在无线保镖中的加密Key的名字",
+                            "english": "Override this method and return your RPC gateway which format is 'https://mobilegw.alipay.com/mgw.htm'.\nIf you want to use the default iOS system setting service of MPaaS to change environment, do not override this method.\nClick the delete button on right side to remove this entry."
+                        },
+                        "optional": true,
+                        "type": "string",
+                        "default": ""
+                    }
+                ]
+}

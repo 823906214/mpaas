@@ -1,0 +1,16 @@
+//
+//  Prototype-Prefix.pch
+//  Prototype
+//
+//  Created by shenmo on 7/20/15.
+//  Copyright (c) 2015 Alibaba. All rights reserved.
+//
+
+// MPAAS HEADERS BEGIN
+// This part is maintained by MPaaS plugin automatically. 
+#ifdef __OBJC__
+
+#import "TinyAppDemo-mPaaS-Headers.h"
+
+#endif
+// MPAAS HEADERS END

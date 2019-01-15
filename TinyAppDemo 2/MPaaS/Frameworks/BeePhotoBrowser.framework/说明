@@ -1,0 +1,29 @@
+需要同步输出到MPaaS的情况
+
+	本目录的Framework是随APMultimedia一同输出到MPaaS中的framework，使用的版本号如下：
+
+	FalconLooks-1.0.0.160907113253-bin.tgz
+	QupaiSDK-1.0.0.160422110615-bin.tgz
+	APIJKPlayer-1.0.0.160822205448-bin.tgz
+	APMAudioProcessing-1.0.0.160822170558-bin.tgz
+	APMImageProcessing-1.0.0.160907142141-bin.tgz
+	APMTaskManager-1.0.0.160822170535-bin.tgz
+	APMBeauty-1.0.0.160907143412-bin.tgz
+	//APMUtils-1.0.0.160901114754-bin.tgz
+        APMUtils-1.0.0.161008160213-bin.tgz
+	APMLive-1.0.0.160901120455-bin.tgz
+	APWebP-1.0.1.20151015.1509081029-framework.tgz
+	libFalconAudio-1.1.0.160726190851-bin.tgz
+	libFalconImg-1.0.0.160826211040-bin.tgz
+	MASSChannel-1.0.0.160831173334-bin.tgz
+	MASSProxy-1.0.0.160831165613-bin.tgz
+	APConfig-1.0.1.160827052312-bin.tgz
+
+	因为MPaaS的包管理工具只支持framework，而libFalconAudio、libFalconImg、两个.a库封装成MPFalcon.framework了。
+	工程地址为http://gitlab.alipay-inc.com/MPaaS-SDK-iOS/MPFalcon
+
+不需要同步输出到MPaaS的情况
+
+	无线保镖在MPaaS里有，但是是三方SDK，所以这个目录托管一下二方的无线保镖SDK保证编译通过。接入应用应该有无线保镖，所以不需要担心。
+	SecurityGuardSDK.framework
+	SGMain.framework

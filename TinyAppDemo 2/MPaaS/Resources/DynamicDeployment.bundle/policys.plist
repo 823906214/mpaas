@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>start</key>
+	<dict>
+		<key>cmd</key>
+		<string>cmd</string>
+		<key>bandage</key>
+		<string>bandage</string>
+		<key>nest</key>
+		<string>nest</string>
+	</dict>
+	<key>login</key>
+	<dict/>
+	<key>foreground</key>
+	<dict>
+		<key>bandage</key>
+		<string>timeThreshold:30</string>
+		<key>cmd</key>
+		<string>timeThreshold:30</string>
+		<key>nest</key>
+		<string>timeThreshold:30</string>
+	</dict>
+	<key>background</key>
+	<dict/>
+</dict>
+</plist>

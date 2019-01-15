@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> </title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="email=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+  <link rel="canonical" href="https://www.alipay.com/">
+  <link rel="stylesheet" href="https://a.alipayobjects.com/g/antui/antui/10.0.0/rem/antui.css"/>
+  <style>
+    html, body, .main{
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      -webkit-user-select:none;
+      user-select:none;
+      background-color: #fff;
+    }
+    .panel{
+      margin-top: 45%;
+      text-align: center;
+      -webkit-transform: translate3d(0);
+      transform: translate3d(0);
+    }
+    .icon-wrap, .icon, .icon-img{
+      width: 0.6rem;
+      height: 0.6rem;
+    }
+    .icon-wrap{
+      margin: 0 auto;
+      position: relative;
+    }
+    .icon{
+      border-radius: 0.04rem;
+      overflow: hidden;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      background: center no-repeat;
+      background-size: 100px 100px;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      -webkit-transition: all 0.25s ease-in;
+      transition: all 0.25s ease-in;
+    }
+    .icon-img {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    .animat-wrap {
+      -webkit-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
+    }
+    .tips {
+      margin: 22px 0;
+      font-size: 0.18rem;
+      line-height: 1;
+      font-weight: bold;
+    }
+    .loading {
+      width: 12px;
+      height: 10px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .dot {
+      width: 0.08rem;
+      height: 0.08rem;
+      background: #ddd;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+
+      -webkit-animation-duration: 500ms;
+      -webkit-animation-delay: 300ms;
+      -webkit-animation-timing-function: ease-in-out;
+      -webkit-animation-direction: alternate;
+      -webkit-animation-iteration-count: infinite;
+
+      animation-duration: 500ms;
+      animation-delay: 300ms;
+      animation-timing-function: ease-in-out;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+    }
+    .dot:first-child{
+      left: 0;
+      margin-left: -4px;
+      background-color: #e5e5e5;
+
+      -webkit-animation-name: move_l2r;
+      animation-name: move_l2r;
+    }
+    .dot:last-child{
+      right: 0;
+      margin-right: -4px;
+      background-color: #d4d4d4;
+
+      -webkit-animation-name: move_r2l;
+      animation-name: move_r2l;
+    }
+    @-webkit-keyframes move_l2r {
+      0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      100% {
+        -webkit-transform: translateX(150%);
+        transform: translateX(150%);
+      }
+    }
+    @-webkit-keyframes move_r2l {
+      0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      100% {
+        -webkit-transform: translateX(-150%);
+        transform: translateX(-150%);
+      }
+    }
+    @keyframes move_l2r {
+      0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      100% {
+        -webkit-transform: translateX(150%);
+        transform: translateX(150%);
+      }
+    }
+    @keyframes move_r2l {
+      0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      100% {
+        -webkit-transform: translateX(-150%);
+        transform: translateX(-150%);
+      }
+    }
+
+    .fadeout .icon{
+      width: 0;
+      height: 0;
+    }
+    .fadeout .animat-wrap {
+      opacity: 0;
+    }
+    .hide {
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div id="J_panel" class="panel">
+      <div class="icon-wrap">
+        <div id="J_icon" class="icon"><img id="J_iconImg" class="icon-img" alt=""></div>
+      </div>
+      <div class="animat-wrap">
+        <div id="J_tips" class="tips"></div>
+        <div id="J_loading" class="loading">
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var util = {
+      ready: function(fn){
+        if(window.AlipayJSBridge && window.AlipayJSBridge.call) {
+          fn && fn();
+        } else {
+          document.addEventListener('AlipayJSBridgeReady', fn);
+        }
+      },
+      getElem: function (id) {
+        return document.getElementById(id);
+      },
+      addClass: function (elem,cls) {
+        if(elem === null || elem === undefined){
+          return;
+        }
+        if((new RegExp(' ?'+cls+'|'+cls+' ?','g')).test(elem.className)){ //去重处理
+          return;
+        }
+        if(elem.classList){
+          elem.classList.add(cls);
+        }else{
+          elem.className += ' '+cls;
+        }
+      }
+    };
+  </script>
+
+  <script>
+    (function(){
+      var ua = navigator.userAgent.toLowerCase();
+      var ePanel = util.getElem('J_panel');
+      var eIcon = util.getElem('J_icon');
+      var eIconImg = util.getElem('J_iconImg');
+      var eTips = util.getElem('J_tips');
+      var eLoading = util.getElem('J_loading');
+      var defaultIcon =  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0BAMAAADP4xsBAAAAElBMVEX29vbo6Ojs7Oz09PTv7+/x8fH2+t7OAAABx0lEQVRo3u3ZTW6CUBTF8dcKC7gU5yWWORIXAMUFPNz/Ylpb4mlzE32Pe+mk5z9x9osxhy8JjDHGGGOMMcYYY3/SqammsEm9fHYIG3SRr1p3eDfKUt25y7eqzlVuRFAV/eTyW0aT2+hENbmNTte6jU5X+01D252/jBG6jU7b0W10usk6On+7l4Radxm95Ms7SSx/J0UqPeSvI5WOxkn7HjiF4fcw2OZhFwbZaEP2t4dV6O4cYd+Ty3PuRGYR2PdkkX0mfVtscV++rj+XfmQPOK5y6Qd2hLyKlho2wnceZT0tNU5VenWjWGjZw9ayhYat5VmstBxg/5R7sdLajpDNtEywIXvQsCGfxEijYbEXuRA/eiFLyH50FdW13krD7nCp96RhQ7bTqO4gO9K4cTyKLw1iJ8401l1sRL+G8Lwd/USaNGnSpP8N3aTTVSZ9TKdfjI/QoO2P030qvQ/ZzWl0HVY0ptB1Z/yrFrRNht08oivIBhu0uqG325qOwVCpaKuMCkWrQ8Vqa3oK5k6adnuF1ysast0GDdnVBr0Pbs2/6To4NoL2knGqwmPSFq9JYwglTkmO9nt7/bi8dYExxhhjjDHGGGNs8z4AuyHPh4R9wfwAAAAASUVORK5CYII=';
+      var defaultTip = '加载中···';
+      var errTip = '网络不给力，请稍后再试';
+
+      if (ua.indexOf('language/en') > 0) {
+        tip = 'Loading···';
+        errTip = 'Network is busy, please try again later';
+      } else if (ua.indexOf('zh-hant') > 0 || ua.indexOf('zh-hk') > 0) {
+        tip = '加載中···';
+        errTip = '網絡不給力，請稍後再試';
+      }
+
+      eIconImg.onerror = function(){
+        eIconImg.src = defaultIcon;
+      }
+
+      util.ready(function(){
+        var appInfo = AlipayJSBridge.startupParams || {};
+
+        eIconImg.src = defaultIcon;
+        eTips.innerHTML = defaultTip;
+        // appInfo.status = appInfo.status || 'loading';
+
+        dataHandler(appInfo);
+
+        AlipayJSBridge.call('hideOptionMenu');
+        AlipayJSBridge.call('setBarBottomLineColor', {
+          color: 16777215
+        });
+
+        document.addEventListener('prepareNebulaStatus',function(e){
+          dataHandler(e.data || {});
+        });
+      });
+
+      function dataHandler(data) {
+        var status = data.status;
+
+        if(data.appIcon) {
+          eIconImg.src = data.appIcon;
+        }
+        if(data.appName) {
+          eTips.innerHTML = data.appName;
+        }
+
+        if (status === 'success') {
+          //由 native 处理
+          //util.addClass(ePanel, 'fadeout');
+        } else if (status === 'fail') {
+          eTips.innerHTML = errTip;
+          util.addClass(eLoading, 'hide');
+        }
+      }
+
+    })();
+  </script>
+</body>
+</html>

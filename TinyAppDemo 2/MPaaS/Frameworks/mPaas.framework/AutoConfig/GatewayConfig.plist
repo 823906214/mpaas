@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Debug</key>
+	<dict>
+		<key>MPaaSLogGateway</key>
+		<string>http://&lt;type here&gt;</string>
+		<key>MPaaSLogProductId</key>
+		<string></string>
+		<key>MPaaSRpcGateway</key>
+		<string>http://&lt;type here&gt;/mgw.htm</string>
+		<key>MPaaSRpcProductId</key>
+		<string></string>
+	</dict>
+	<key>Pre-release</key>
+	<dict>
+		<key>MPaaSLogGateway</key>
+		<string>http://&lt;type here&gt;</string>
+		<key>MPaaSLogProductId</key>
+		<string></string>
+		<key>MPaaSRpcGateway</key>
+		<string>http://&lt;type here&gt;/mgw.htm</string>
+		<key>MPaaSRpcProductId</key>
+		<string></string>
+	</dict>
+	<key>Release</key>
+	<dict>
+		<key>MPaaSLogGateway</key>
+		<string>http://&lt;type here&gt;</string>
+		<key>MPaaSLogProductId</key>
+		<string></string>
+		<key>MPaaSRpcGateway</key>
+		<string>http://&lt;type here&gt;/mgw.htm</string>
+		<key>MPaaSRpcProductId</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

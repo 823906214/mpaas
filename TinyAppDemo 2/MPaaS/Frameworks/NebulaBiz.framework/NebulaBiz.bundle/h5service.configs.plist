@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>h5_SafePayUrls</key>
+	<dict>
+		<key>mapiPayUrls</key>
+		<array>
+			<string>https://wappaygw.alipay.com/home/exterfaceAssign.htm</string>
+		</array>
+		<key>taobaoBatchPayUrls</key>
+		<array>
+			<string>http://maliprod.alipay.com/batch_payment.do</string>
+			<string>http://mali.alipay.com/batch_payment.do</string>
+		</array>
+		<key>taobaoPayUrls</key>
+		<array>
+			<string>http://maliprod.alipay.com/w/trade_pay.do</string>
+			<string>http://mali.alipay.com/w/trade_pay.do</string>
+		</array>
+		<key>thirdPayUrls</key>
+		<array>
+			<string>http://wappaygw.alipay.com/service/rest.htm</string>
+		</array>
+	</dict>
+	<key>h5_EntryWhitelist</key>
+	<array>
+		<string>^https://(\w+\.)+alipay\.com/</string>
+	</array>
+	<key>h5_InputBoxWhitelist</key>
+	<array>
+		<string>^https://(\w+\.)+alipay\\.com/</string>
+	</array>
+</dict>
+</plist>

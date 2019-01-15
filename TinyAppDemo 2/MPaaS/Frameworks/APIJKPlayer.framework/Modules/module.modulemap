@@ -1,0 +1,6 @@
+framework module APIJKPlayer {
+  umbrella header "APIJKPlayer.h"
+
+  export *
+  module * { export * }
+}

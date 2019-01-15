@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Settings</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Category</string>
+			<key>Key</key>
+			<string>kMPSelectedEnvironment</string>
+			<key>DefaultValue</key>
+			<string>Release</string>
+			<key>Titles</key>
+			<array>
+				<string>Customizing</string>
+				<string>Release</string>
+				<string>Pre-release</string>
+				<string>Debug</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>Customizing</string>
+				<string>Release</string>
+				<string>Pre-release</string>
+				<string>Debug</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Customizing</string>
+			<key>Key</key>
+			<string></string>
+			<key>File</key>
+			<string>Gateway</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
+</plist>
